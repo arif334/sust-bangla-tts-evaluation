@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AILTTS-demo: "Adversarial Learning of Intermediate Acoustic Feature for End-to-End Lightweight Text-to-Speech"</title>
+    <style>
+      div {
+        margin-bottom: 64px;
+      }
+      .first-col {
+        padding-right: 40px;
+        white-space: nowrap;
+      }
+      .text {
+        font-style: italic;
+        color: #666666;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>[AILTTS-demo] "Adversarial Learning of Intermediate Acoustic Feature for End-to-End Lightweight Text-to-Speech"</h1>
+      </header>
+    </article>
+    
+    <div>
+      <a name="ss"><h2>LJ Speech Dataset</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <h4>Text</h4>
+          </td>
+          <td class="text">
+            and John Lancaster for 1 shilling, 8 pence, with costs of 7 shillings, 6 pence. Quote.
+          </td>
+          <td class="text">
+            These malpractices were fostered by the absence of all supervision and the generally unbroken idleness.
+          </td>
+          <td class="text">
+            Mr. Davison, sent to Newgate for embezzlement, and whose case is given in the preceding chapter,
+          </td>
+          <td class="text">
+            With the seeming impossibility of extending the limits of the prison as it then stood,
+          </td>
+        </tr>
+        <tr>
+          <td class="first-col">Ground Truth</td>
+          <td><audio controls="" preload="none"><source src="wavs/GT344.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/GT003-0275.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/GT003-0174.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/GT003-0343.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">Tacotron 2 + UnivNet-c16</td>
+          <td><audio controls="" preload="none"><source src="wavs/Taco2_344.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0275.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0174.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0343.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">GlowTTS + UnivNet-c16</td>
+          <td><audio controls="" preload="none"><source src="wavs/Glow344.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Glow003-0275.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Glow003-0174.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Glow003-0343.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">LiteTTS w/ UnivNet-c16</td>
+          <td><audio controls="" preload="none"><source src="wavs/Lite344.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Lite003-0275.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Lite003-0174.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/Lite003-0343.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AILTTS (ours)</td>
+          <td><audio controls="" preload="none"><source src="wavs/P344.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P003-0275.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P003-0174.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P003-0343.wav"></audio></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div>
+      <a name="as"><h2>Ablation Study</h2></a>
+      <hr>
+      <table>
+        <tbody>
+        <tr>
+          <td>
+            <h4>Text</h4>
+          </td>
+          <td class="text">
+            the Fleet, and the Marshalsea prisons especially devoted to them,
+          </td>
+          <td class="text">
+            or the sixpenny allowance was claimed for the creditors, which seldom happened, owing to the expense the process entailed.
+          </td>
+          <td class="text">
+            Authority was given to raise money on the Orphans' Fund to the extent of ninety thousand pounds.
+          </td>
+        </tr>
+        <tr>
+          <td class="first-col">AILTTS (ours)</td>
+          <td><audio controls="" preload="none"><source src="wavs/P366.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P509.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P558.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AILTTS w/o Conditional Discriminator</td>
+          <td><audio controls="" preload="none"><source src="wavs/P366_woCD.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P509_woCD.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P558_woCD.wav"></audio></td>
+        </tr>
+        <tr>
+          <td class="first-col">AILTTS w/o Prosody-conditioned Aligner</td>
+          <td><audio controls="" preload="none"><source src="wavs/P366_woPA.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P509_woPA.wav"></audio></td>
+          <td><audio controls="" preload="none"><source src="wavs/P558_woPA.wav"></audio></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <a name="ss"><h4>For the form of the demo page, we referred to: <a href="https://jaywalnut310.github.io/vits-demo/index.html">VITS-demo</a></h4></a>
+      </td>
+    </div>
+  </body>
+</html>
