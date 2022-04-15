@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AILTTS-demo: "Adversarial Learning of Intermediate Acoustic Feature for End-to-End Lightweight Text-to-Speech"</title>
+    <title>Expressive BTTS</title>
     <style>
       div {
         margin-bottom: 64px;
@@ -19,12 +19,12 @@
   <body>
     <article>
       <header>
-        <h1>[AILTTS-demo] "Adversarial Learning of Intermediate Acoustic Feature for End-to-End Lightweight Text-to-Speech"</h1>
+        <h1>Expressive Bangla Text-to-Speech Demo</h1>
       </header>
     </article>
     
     <div>
-      <a name="ss"><h2>LJ Speech Dataset</h2></a>
+      <a name="ss"><h2>Dataset: M1</h2></a>
       <hr>
       <table>
         <tbody>
@@ -41,51 +41,43 @@
           <td class="text">
             Mr. Davison, sent to Newgate for embezzlement, and whose case is given in the preceding chapter,
           </td>
-          <td class="text">
-            With the seeming impossibility of extending the limits of the prison as it then stood,
-          </td>
         </tr>
         <tr>
           <td class="first-col">Ground Truth</td>
           <td><audio controls="" preload="none"><source src="wavs/GT344.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/GT003-0275.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/GT003-0174.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/GT003-0343.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">Tacotron 2 + UnivNet-c16</td>
           <td><audio controls="" preload="none"><source src="wavs/Taco2_344.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0275.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0174.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0343.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">GlowTTS + UnivNet-c16</td>
           <td><audio controls="" preload="none"><source src="wavs/Glow344.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/Glow003-0275.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/Glow003-0174.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Glow003-0343.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">LiteTTS w/ UnivNet-c16</td>
           <td><audio controls="" preload="none"><source src="wavs/Lite344.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/Lite003-0275.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/Lite003-0174.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Lite003-0343.wav"></audio></td>
         </tr>
         <tr>
           <td class="first-col">AILTTS (ours)</td>
           <td><audio controls="" preload="none"><source src="wavs/P344.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/P003-0275.wav"></audio></td>
           <td><audio controls="" preload="none"><source src="wavs/P003-0174.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P003-0343.wav"></audio></td>
         </tr>
         </tbody>
       </table>
     </div>
     
     <div>
-      <a name="as"><h2>Ablation Study</h2></a>
+      <a name="as"><h2>Dataset: F1</h2></a>
       <hr>
       <table>
         <tbody>
@@ -122,10 +114,6 @@
           <td><audio controls="" preload="none"><source src="wavs/P558_woPA.wav"></audio></td>
         </tr>
       </table>
-    </div>
-    <div>
-      <a name="ss"><h4>For the form of the demo page, we referred to: <a href="https://jaywalnut310.github.io/vits-demo/index.html">VITS-demo</a></h4></a>
-      </td>
     </div>
   </body>
 </html>
