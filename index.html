@@ -1,119 +1,230 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Expressive BTTS</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Subachan</title>
     <style>
-      div {
-        margin-bottom: 64px;
-      }
-      .first-col {
-        padding-right: 40px;
-        white-space: nowrap;
-      }
-      .text {
-        font-style: italic;
-        color: #666666;
-      }
+        #nav-bar {
+            width: 100%;
+            height: 75px;
+            border-style: solid;
+            border-color: white;
+            background-color: rgb(21, 104, 40);
+            color: white;
+            text-align: center;
+        }
+        th {
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
-    <article>
-      <header>
-        <h1>Expressive Bangla Text-to-Speech Demo</h1>
-      </header>
-    </article>
-    
-    <div>
-      <a name="ss"><h2>Dataset: M1</h2></a>
-      <hr>
-      <table>
-        <tbody>
-        <tr>
-          <td>
-            <h4>Text</h4>
-          </td>
-          <td class="text">
-            and John Lancaster for 1 shilling, 8 pence, with costs of 7 shillings, 6 pence. Quote.
-          </td>
-          <td class="text">
-            These malpractices were fostered by the absence of all supervision and the generally unbroken idleness.
-          </td>
-          <td class="text">
-            Mr. Davison, sent to Newgate for embezzlement, and whose case is given in the preceding chapter,
-          </td>
-        </tr>
-        <tr>
-          <td class="first-col">Ground Truth</td>
-          <td><audio controls="" preload="none"><source src="wavs/GT344.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/GT003-0275.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/GT003-0174.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">Tacotron 2 + UnivNet-c16</td>
-          <td><audio controls="" preload="none"><source src="wavs/Taco2_344.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0275.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Taco2_003-0174.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">GlowTTS + UnivNet-c16</td>
-          <td><audio controls="" preload="none"><source src="wavs/Glow344.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Glow003-0275.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Glow003-0174.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">LiteTTS w/ UnivNet-c16</td>
-          <td><audio controls="" preload="none"><source src="wavs/Lite344.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Lite003-0275.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/Lite003-0174.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AILTTS (ours)</td>
-          <td><audio controls="" preload="none"><source src="wavs/P344.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P003-0275.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P003-0174.wav"></audio></td>
-        </tr>
-        </tbody>
-      </table>
+</head>
+
+<body>
+    <div id="nav-bar">
+        <h1 style="text-align: center;">Bangla TTS Voices</h1>
     </div>
     
-    <div>
-      <a name="as"><h2>Dataset: F1</h2></a>
-      <hr>
-      <table>
-        <tbody>
-        <tr>
-          <td>
-            <h4>Text</h4>
-          </td>
-          <td class="text">
-            the Fleet, and the Marshalsea prisons especially devoted to them,
-          </td>
-          <td class="text">
-            or the sixpenny allowance was claimed for the creditors, which seldom happened, owing to the expense the process entailed.
-          </td>
-          <td class="text">
-            Authority was given to raise money on the Orphans' Fund to the extent of ninety thousand pounds.
-          </td>
-        </tr>
-        <tr>
-          <td class="first-col">AILTTS (ours)</td>
-          <td><audio controls="" preload="none"><source src="wavs/P366.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P509.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P558.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AILTTS w/o Conditional Discriminator</td>
-          <td><audio controls="" preload="none"><source src="wavs/P366_woCD.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P509_woCD.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P558_woCD.wav"></audio></td>
-        </tr>
-        <tr>
-          <td class="first-col">AILTTS w/o Prosody-conditioned Aligner</td>
-          <td><audio controls="" preload="none"><source src="wavs/P366_woPA.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P509_woPA.wav"></audio></td>
-          <td><audio controls="" preload="none"><source src="wavs/P558_woPA.wav"></audio></td>
-        </tr>
-      </table>
+
+    <div class="container">
+        <div class="row">
+            <p style="text-align: center;">
+                title format: Acoustic-Model-#of-steps-trained + Vocoder-Model-#of-steps-trained (RTF on GPU) (RTF on CPU)
+            </p>
+           
+            
+            <br>
+            
+            <div>
+                <h2>dataset: alamgir12</h2>
+            </div>
+            <hr>
+
+            <!--
+                <td>
+                    <h5 style="text-align: center;"></h5>
+                    <div style="text-align: center;">
+                        <audio controls><source src="" type="audio/wav"></audio>
+                    </div>
+                </td>
+            -->
+            <div>
+                <table border="1">
+                    <caption><h2 style="text-align:center;">Naturalness Test</h2></caption>
+                    <tr>
+                        <th>ID</th>
+                        <th>Text</th>
+                        <th>Audio</th>
+                    </tr>
+                    <tr> <!-- VITS -->
+                        <td>
+                            <h5 style="text-align: center;">VITS-200k (-) (0.34)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_vits-200k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr> <!-- AlignTTS -->
+                        <td>
+                            <h5 style="text-align: center;">AlignTTS-240k + Griffin-Lim (-) (0.43)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_aligntts-240k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">AlignTTS-240k + MB-MelGAN-280k (-) (0.19)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_aligntts-240k_mbmel-280k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">AlignTTS-240k + Hifi-GAN-150k (-) (0.51)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_aligntts-240k_hifi-150k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5 style="text-align: center;">AlignTTS-240k + WaveRNN-300k (-) (21.8)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_align-240k_wavernn-300k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">AlignTTS-240k + UnivNet-163k (-) (0.26)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_align-240k_univnet-163k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">AlignTTS-240k + WaveGrad-170k (-) (25.7)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_align-240k_wavegrad-170k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- GlowTTS -->
+                        <td>
+                            <h5 style="text-align: center;">GlowTTS-330k + Griffin-Lim (0.56) (0.30)</h5>
+                            <div style="text-align: center;">
+                                <audio controls> <source src="wavs/al12_glow-330k_gl.wav" type="audio/wav"> </audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">GlowTTS-330k + MB-MelGAN-280k (-) (0.05)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_glow-330k_mbmel-280k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">GlowTTS-330k + Hifi-GAN-150k (0.11) (-)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_glow-330k_hifi-150k_gpu.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5 style="text-align: center;">GlowTTS-330k + WaveRNN-300k ()(49.9)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_glow-330k_wavernn-300k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">GlowTTS-330k +UnivNet-163k ()(0.13)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_glow-330k_univnet-163k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">GlowTTS-330k + WaveGrd-170k ()(20.9)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_glow-330k_wavegrad-170k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- Taco2-DDC -->
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DDC-230k + Griffin-Lim (-) (0.43)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_taco2ddc-230k_gl.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DDC-100k + MB-MelGAN-280k (-) (0.21)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_taco2ddc-100k_mbmel-280k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DDC-100k + Hifi-GAN-150k (-) (0.53)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_taco2ddc-100k_hifi-150k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DDC-100k + WaveRNN-300k () (41.4)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_taco2ddc-100k_wavernn-300k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DDC-100k + UnivNet-163k () (0.26)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_taco2ddc-100k_univnet-163k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DDC-100k + WaveGrad-170k () (23.8)</h5>
+                            <div style="text-align: center;">
+                                <audio controls><source src="wavs/al12_taco2ddc-100k_wavegrad-170k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- Taco2-DCA -->
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DCA-70k + Griffin-Lim (-) (0.43)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_taco2dca_gl-70k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">Tacotron2-DCA-70k + HifiGAN-140k (-) (0.49)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_taco2dca-70k_hifi-140k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr> <!-- FastPitch -->
+                        <td>
+                            <h5 style="text-align: center;">FastPitch-536k + Griffin-Lim (-) (0.34)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_fastpitch-536k_gl.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td>
+                            <h5 style="text-align: center;">FastPitch-536k + HifiGAN-140k (-) (0.41)</h5>
+                            <div style="text-align:center;">
+                                <audio controls><source src="wavs/al12_fastpitch-535k_hifi-140k.wav" type="audio/wav"></audio>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+          
+        </div>
     </div>
-  </body>
+
+    <br>
+</body>
 </html>
